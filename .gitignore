@@ -1,0 +1,13 @@
+# Build output
+build/
+dist/
+*.zip
+
+# Downloaded source data (fetch with tools/fetch_data.sh; MapData.swift is committed)
+data_dl/
+
+# Local reference frames from the film clip — copyrighted, never commit
+compare/
+
+.DS_Store
+*.swp
