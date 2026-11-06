@@ -21,7 +21,7 @@ silicon and Intel.
 ### Option 1: download (easiest)
 
 1. Download `WOPR-ScreenSaver-<version>.zip` from the
-   [Releases](../../releases) page and unzip it.
+   [Releases](https://github.com/mattpatterson/WOPR_ScreenSaver/releases) page and unzip it.
 2. The saver isn't notarized by Apple, so macOS quarantines it. Clear the
    quarantine flag in Terminal:
 
@@ -37,7 +37,7 @@ silicon and Intel.
 You need Xcode or the Xcode Command Line Tools (`xcode-select --install`).
 
 ```bash
-git clone https://github.com/<you>/WOPR_ScreenSaver.git
+git clone https://github.com/mattpatterson/WOPR_ScreenSaver.git
 cd WOPR_ScreenSaver
 ./build.sh install
 ```
