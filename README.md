@@ -91,8 +91,7 @@ open "build/WOPR Preview.app"
 The visuals were matched frame by frame against the film's NORAD big‑board
 footage:
 
-- **Screens:** rear‑projection screens with a white bezel, dark‑navy glass and
-  a faint grid.
+- **Screens:** rear‑projection screens with a white bezel on solid black.
 - **Map:** the United States outlined in blue, the USSR in red (its 15
   republics merged into one outline), and the rest of the world in teal.
   Target dots are pre‑plotted.

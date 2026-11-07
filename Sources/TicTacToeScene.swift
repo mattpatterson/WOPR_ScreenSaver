@@ -198,12 +198,8 @@ final class TicTacToeScene: WOPRScene {
 
     func draw(_ rc: RenderContext, t: Double) {
         let ctx = rc.ctx, u = rc.u, W = rc.size.width, H = rc.size.height
-        // The film plays tic-tac-toe on the big-board screens: white vector strokes on dark navy.
-        Director.provideStatic(rc, key: "ttt") { src in
-            let m = 26 * src.u
-            let screen = CGRect(x: m, y: m, width: src.size.width - 2 * m, height: src.size.height - 2 * m)
-            BoardArt.drawScreens(src, [Viewport(screen: screen, map: MapFrame(rect: .zero), blank: true, zoom: 1)], neighbors: false)
-        }
+        // White vector strokes on a solid black background (no static screen art, so the
+        // black root layer shows through).
         let area = CGRect(x: 70 * u, y: 70 * u, width: W - 140 * u, height: H - 70 * u - 150 * u)
 
         // Header + counter
@@ -274,7 +270,7 @@ final class TicTacToeScene: WOPRScene {
             let size = 80 * u
             let tw = VectorFont.width("WINNER: NONE", size: size)
             let box = CGRect(x: W / 2 - tw / 2 - 50 * u, y: H / 2 - size * 0.9, width: tw + 100 * u, height: size * 1.8)
-            ctx.setFillColor(Theme.with(Theme.screen, alpha: 0.88 * a))
+            ctx.setFillColor(CGColor(gray: 0, alpha: a))
             ctx.fill(box)
             let border = CGPath(rect: box, transform: nil)
             Draw.glowStroke(ctx, border, color: Theme.frame, width: max(3 * u, 0.6), glow: 2, alpha: a)

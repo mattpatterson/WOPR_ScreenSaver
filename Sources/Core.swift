@@ -46,8 +46,7 @@ enum Theme {
 
     // Film big-board palette (sampled from the NORAD screens in the reference clip).
     /// Screen interior: very dark navy.
-    static let screen = CGColor(red: 0.015, green: 0.03, blue: 0.08, alpha: 1)
-    static let grid = CGColor(red: 0.10, green: 0.17, blue: 0.38, alpha: 0.30)
+    static let screen = CGColor(gray: 0, alpha: 1)
     /// Non-aligned coastlines.
     static let teal = CGColor(red: 0.22, green: 0.78, blue: 0.62, alpha: 1)
     static let usBlue = CGColor(red: 0.30, green: 0.58, blue: 1.0, alpha: 1)

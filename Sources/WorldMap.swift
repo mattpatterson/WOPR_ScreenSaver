@@ -156,7 +156,6 @@ enum BoardArt {
             ctx.clip(to: vp.screen)
             ctx.setFillColor(Theme.screen)
             ctx.fill(vp.screen)
-            drawGrid(ctx, vp.screen, step: 34 * u, u: u)
             if !vp.blank { drawMap(rc, vp) }
             ctx.restoreGState()
             drawBezel(ctx, vp.screen, u: u)
@@ -181,17 +180,6 @@ enum BoardArt {
         if !p.isEmpty { Draw.glowStroke(rc.ctx, p, color: Theme.frame, width: max(1, 3 * u), glow: 2.4, alpha: 0.75) }
     }
 
-    static func drawGrid(_ ctx: CGContext, _ r: CGRect, step: CGFloat, u: CGFloat) {
-        let g = CGMutablePath()
-        var x = r.minX + step
-        while x < r.maxX { g.move(to: CGPoint(x: x, y: r.minY)); g.addLine(to: CGPoint(x: x, y: r.maxY)); x += step }
-        var y = r.minY + step
-        while y < r.maxY { g.move(to: CGPoint(x: r.minX, y: y)); g.addLine(to: CGPoint(x: r.maxX, y: y)); y += step }
-        ctx.addPath(g)
-        ctx.setStrokeColor(Theme.grid)
-        ctx.setLineWidth(max(0.5, 1.0 * u))
-        ctx.strokePath()
-    }
 
     static func drawMap(_ rc: RenderContext, _ vp: Viewport) {
         let ctx = rc.ctx, u = rc.u

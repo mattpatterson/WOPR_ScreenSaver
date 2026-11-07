@@ -14,7 +14,6 @@ private func drawBoardBackground(_ rc: RenderContext, key: String) {
         let s = boardScreen(src)
         src.ctx.setFillColor(Theme.screen)
         src.ctx.fill(s)
-        BoardArt.drawGrid(src.ctx, s, step: 34 * src.u, u: src.u)
         BoardArt.drawBezel(src.ctx, s, u: src.u)
         BoardArt.drawNeighborBezels(src, around: s)
     }
